@@ -18,6 +18,7 @@
       <a-input
         v-model:value="apiKey"
         placeholder="apiKey"
+        allow-clear
         @change="operationEntry({ value: 'apiKeyChange' })"
       />
     </div>
@@ -182,7 +183,9 @@ const handleApiKeyChange = () => {
 //     immediate: true,
 //   }
 // );
-onMounted(() => {});
+onMounted(() => {
+  apiKey.value = isGlobalSetting.apiKey;
+});
 </script>
 <style lang="scss" scoped>
 .operationBox {

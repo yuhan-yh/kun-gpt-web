@@ -8,6 +8,7 @@
  */
 import { defineStore } from "pinia";
 import { models } from "@/utils/setting.js";
+import { localGet, localSet } from "@/utils/storage";
 // 用户相关
 export const useGlobalSetting = defineStore("isGlobalSetting", {
   id: "globalSetting",
@@ -15,7 +16,7 @@ export const useGlobalSetting = defineStore("isGlobalSetting", {
     return {
       activeModel: models?.[0] || null, // 当前模型
       isMobile: false,
-      apiKey: "",
+      apiKey: localGet("apiKey") || "",
     };
   },
   actions: {
@@ -26,7 +27,8 @@ export const useGlobalSetting = defineStore("isGlobalSetting", {
       this.isMobile = !!val;
     },
     setApiKey(val) {
-      this.apiKey = val || "";
+      localSet("apiKey", val || "");
+      this.apiKey = localGet("apiKey");
     },
   },
 });

@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2023-04-05 23:20:07
- * @LastEditTime: 2023-04-11 11:40:06
+ * @LastEditTime: 2023-04-13 16:14:11
  * @LastEditors: yuhan
  * @Description:
- * @FilePath: \kun-gpt\src\utils\index.js
+ * @FilePath: \kun-gpt-web\src\utils\index.js
  */
 import axios from "@/utils/request";
 import { message } from "ant-design-vue";
@@ -67,7 +67,7 @@ export const getFormDataUrl = (type, baseUrl, formInfo, options = {}) => {
         // }
       })
       .catch((err) => {
-        message.error(err?.msg || err || "请求失败");
+        // message.error(err?.msg || err || "请求失败");
         reject(err?.msg || err || "请求失败");
       });
   });

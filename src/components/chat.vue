@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2023-02-07 10:16:46
- * @LastEditTime: 2023-04-13 11:59:24
+ * @LastEditTime: 2023-04-13 16:23:45
  * @LastEditors: yuhan
  * @Description: 
  * @FilePath: \kun-gpt-web\src\components\chat.vue
@@ -16,9 +16,7 @@
             <a class="ant-dropdown-link" @click.prevent>
               {{
                 isGlobalSetting?.activeModel
-                  ? `${isGlobalSetting.activeModel.label}(每次消耗${
-                      isGlobalSetting.activeModel.consume || 0
-                    }积分)`
+                  ? `${isGlobalSetting.activeModel.label}`
                   : ""
               }}
               <DownOutlined />
@@ -26,7 +24,7 @@
             <template #overlay>
               <a-menu @click="handleChangeModel">
                 <a-menu-item v-for="model in models" :key="model.id">
-                  {{ `${model.label}(${model.consume || 0}积分)` }}
+                  {{ `${model.label}` }}
                 </a-menu-item>
               </a-menu>
             </template>
@@ -172,7 +170,7 @@ async function getResponse(msg) {
     // gptRq: {
     // eslint-disable-next-line no-undef
     // apiKey: process.env.OPENAI_API_KEY,
-    model: "gpt-3.5-turbo",
+    model: isGlobalSetting?.activeModel.value || "gpt-3.5-turbo",
     messages: [...msgList.value.slice(1)],
     // },
     // phoneNumber: isUserStore.telephone,
