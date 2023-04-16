@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2023-02-07 10:13:01
- * @LastEditTime: 2023-04-05 20:35:36
+ * @LastEditTime: 2023-04-16 18:39:33
  * @LastEditors: yuhan
  * @Description:
- * @FilePath: \kunkun-gpt\vite.config.js
+ * @FilePath: \kun-gpt-web\vite.config.js
  */
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
@@ -16,7 +16,6 @@ export default defineConfig({
     "process.env": {
       // eslint-disable-next-line no-undef
       ...process.env,
-      OPENAI_API_KEY: "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",
     },
   },
   plugins: [vue()],
