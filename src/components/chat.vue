@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2023-02-07 10:16:46
- * @LastEditTime: 2023-04-13 16:23:45
+ * @LastEditTime: 2023-04-16 19:08:48
  * @LastEditors: yuhan
  * @Description: 
  * @FilePath: \kun-gpt-web\src\components\chat.vue
@@ -185,7 +185,7 @@ async function getResponse(msg) {
 
   await getFormDataUrl(
     "post",
-    "https://api.openai.com/v1/chat/completions",
+    "https://api.openai-proxy.com/v1/chat/completions",
     data,
     {
       headers: {
